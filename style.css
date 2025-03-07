@@ -1,0 +1,145 @@
+/* Estilos básicos */
+/* Estilo padrão para telas grandes (computadores e tablets grandes) */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-image: url('background.jpg.jpg');  /* Sua imagem de fundo */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;  /* Definindo a largura para telas grandes */
+    margin: 0 auto;
+}
+
+.gallery img {
+    max-width: 100%;  /* As imagens vão se ajustar automaticamente ao tamanho da tela */
+    height: auto;
+}
+
+
+/* Animação de fade-in nas imagens */
+.gallery img {
+    width: 200px;
+    height: auto;
+    margin: 10px;
+    border-radius: 10px;
+    opacity: 0; /* Inicialmente invisível */
+    animation: fadeIn 2s ease-in-out forwards; /* Aparece em 2 segundos */
+}
+
+/* Definindo a animação */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5); /* Começa menor */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1); /* Termina no tamanho original */
+    }
+}
+/* Para telas menores que 768px (tablets e celulares) */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;  /* Ajustando o tamanho da fonte para melhor visualização */
+    }
+
+    .container {
+        width: 90%;  /* Aumentando a largura para aproveitar mais espaço em telas menores */
+    }
+
+    .gallery img {
+        width: 100%;  /* As imagens vão ocupar toda a largura disponível */
+    }
+
+    .gallery {
+        display: block;
+        margin: 0;
+    }
+
+    h1 {
+        font-size: 24px;  /* Reduzindo o tamanho do título */
+    }
+
+    p {
+        font-size: 16px;  /* Ajustando o tamanho do texto */
+    }
+}
+
+/* Para telas menores que 480px (celulares pequenos) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px;  /* Reduzindo ainda mais o tamanho do título */
+    }
+
+    .gallery img {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 14px;  /* Reduzindo o tamanho do texto */
+    }
+}
+/* Estilo dos corações flutuantes */
+.hearts {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;  /* Impede que o clique nos corações interfira no conteúdo da página */
+    z-index: 9999;  /* Garante que os corações fiquem acima de tudo */
+  }
+  
+  .heart {
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    position: absolute;
+    transform: rotate(45deg);
+    animation: floatHeart 5s infinite ease-in-out;
+  }
+  
+  .heart:before, .heart:after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border-radius: 50%;
+  }
+  
+  .heart:before {
+    top: -15px;
+    left: 0;
+  }
+  
+  .heart:after {
+    left: 15px;
+    top: 0;
+  }
+  
+  /* Animação dos corações flutuando */
+  @keyframes floatHeart {
+    0% {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.2) translateY(-20px);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+  }
+  
+
